@@ -1,5 +1,4 @@
 Tom:
-* NameOwnerChanged
 * Activation
 * Activatable names
 * Method reply on disconnect
