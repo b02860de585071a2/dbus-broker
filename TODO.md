@@ -12,3 +12,6 @@ David:
 * Stitch sender
 * Parse/verify message body
 * Controller
+
+General:
+* `struct FoobarEntry` -> `struct Foobar`
