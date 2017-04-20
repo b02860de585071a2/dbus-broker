@@ -1,6 +1,4 @@
 Tom:
-* NameAcquired
-* NameLost
 * NameOwnerChanged
 * Activation
 * Activatable names
