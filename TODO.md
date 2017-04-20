@@ -1,5 +1,5 @@
 Tom:
-* Activatable names
+* Reply object for activatable names
 * Method reply on disconnect
 * Driver error replies
 
