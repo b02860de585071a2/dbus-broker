@@ -1,5 +1,4 @@
 Tom:
-* Activation
 * Activatable names
 * Method reply on disconnect
 * Driver error replies
@@ -9,6 +8,7 @@ David:
 * Stitch sender
 * Parse/verify message body
 * Controller
+  - Activation
 
 General:
 * `struct FoobarEntry` -> `struct Foobar`
