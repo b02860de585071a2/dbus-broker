@@ -1,7 +1,6 @@
 Tom:
 * Reply object for activatable names
 * Method reply on disconnect
-* Driver error replies
 
 David:
 * Disconnect handling
