@@ -1,6 +1,5 @@
 Tom:
 * Reply object for activatable names
-* Method reply on disconnect
 
 David:
 * Disconnect handling
