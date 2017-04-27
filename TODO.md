@@ -3,7 +3,6 @@ Tom:
 
 David:
 * Disconnect handling
-* Stitch sender
 * Parse/verify message body
 * Controller
   - Activation
