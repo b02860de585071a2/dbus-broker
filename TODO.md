@@ -1,6 +1,5 @@
 Tom:
  * Controller
-   - `org.bus1.DBus.Controller { AddListener(ohX); AddName(osu); }`
    - `org.bus1.DBus.Listener { Release(); SetPolicy(X); }`
    - `org.bus1.DBus.Name { Release(); Activate(); }`
 
@@ -9,5 +8,6 @@ David:
 * Parse/verify message body
 
 General:
-* Accounting
+* Hook up accounting
+* Policy
 * `struct FoobarEntry` -> `struct Foobar`
