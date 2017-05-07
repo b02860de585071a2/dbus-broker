@@ -1,7 +1,4 @@
 Tom:
- * Controller
-   - `org.bus1.DBus.Listener { Release(); SetPolicy(X); }`
-   - `org.bus1.DBus.Name { Release(); Activate(); }`
 
 David:
 * Hook up with systemd
