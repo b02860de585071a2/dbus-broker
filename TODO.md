@@ -1,7 +1,6 @@
 Tom:
 
 David:
-* Hook up with systemd
 * Parse/verify message body
 
 General:
