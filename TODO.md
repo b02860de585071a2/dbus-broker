@@ -1,4 +1,2 @@
-General:
-* Hook up accounting
+Tom:
 * Policy
-* `struct FoobarEntry` -> `struct Foobar`
