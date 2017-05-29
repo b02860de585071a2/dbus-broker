@@ -1,5 +1,3 @@
-# Purpose
-
 This defines the policy implemented by the dbus broker.
 
 # Users
@@ -19,3 +17,9 @@ However, restrictions can be made using transaction policies. A policy comes in 
 A policy consists of a set of rules mapping the tuple (name, path, interface, member, type) to either 'allow' or 'deny'. Each member of the tuple may be a wildcard. For a message to be allowed by a given policy, each tuple formed by combining each of the names of the sending/receiving peer as well as the wildcard name with the values from the message's metadata must map to 'allow'.
 
 More specific rules take precedence over less specific ones. A rule is considered more specific than another if they both match a given message, and the former has a literal and the latter a wildcard in the first member field of the tuple in which they differ.
+
+# dbus-daemon compatibility
+
+The policy files of the dbus-daemon may be compiled into the policies accepted by the broker with the following caveats:
+ - 'at_console=true' rules must be discarded,
+ - it is never possible to have a policy to cause non-expected replies to be delivered.
