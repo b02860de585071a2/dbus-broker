@@ -2,11 +2,11 @@ This defines the policy implemented by the dbus broker.
 
 # Users
 
-By default, any user may connect to the broker. Optionally, a blacklist or a whitelist (but not both) of uid's and one of gid's may be provided to only allow some peers to connect. The list of uid's take precedent over the list of gid's.
+By default, any user may connect to the broker. However, a blacklist or a whitelist (but not both) of uids and one of gids may be provided to only allow some peers to connect. The list of uids take precedence over the list of gids.
 
 # Names
 
-By default, any peer may own any name. However, a blacklist or a whitelist (but not both) may be provided to only allow some names to be owned. Moreover, such a list may also be provided once per gid and once per uid. The per-gid list takes precedence over the global list and the per-uid list takes precedence over the per-gid one.
+By default, any peer may own any name. However, a blacklist or a whitelist (but not both) may be provided to only allow some names to be owned. Such a list may also be provided once per gid and once per uid. The per-gid list takes precedence over the global list and the per-uid list takes precedence over both the global and the per-gid one.
 
 # Message transactions
 
