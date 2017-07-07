@@ -1,4 +1,4 @@
-DBus is meant to be a reliable transport, his poses several challenges, this page outlines how the dbus-broker deals with them.
+DBus is meant to be a reliable transport, this poses several challenges, this page outlines how the dbus-broker deals with them.
 
 ## Fatal errors
 
