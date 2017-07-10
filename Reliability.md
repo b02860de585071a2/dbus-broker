@@ -16,7 +16,7 @@ message could not be delivered to it.
 
 ## Replies
 
-A method call receives a reply if and only if the NO_REPLY_EXPECTED flag is set. Either from
+A method call receives a reply if and only if the NO_REPLY_EXPECTED flag is unset. Either from
 the destination peer or from the driver itself in case an error occurred, or the destination
 disconnected without ever sending a reply. No other message type ever receives a reply.
 
