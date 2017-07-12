@@ -1,25 +1,48 @@
-This defines the policy implemented by the dbus broker.
+The D-Bus specification specifies three kinds of policies. This page outlines how
+the dbus broker differs in its implementation of the policies compared to the specification
+and the reference implementation.
 
-# Users
+== Credentials ==
 
-By default, any user may connect to the broker. However, a blacklist or a whitelist (but not both) of uids and one of gids may be provided to only allow some peers to connect. The list of uids take precedence over the list of gids.
+Whenever a peer connectns to the bus, a policy is generated for the peer based on its
+credentials. In order to make this intuitive and predictable we base the decision
+entirely on the uid, gid and auxillary groups pinned in the socket by the calling
+peer at connect(). In particular, we implicitly assume at_console=false. Also, we
+do not do any resolution of groups over nss at connect time, unlike the way the
+reference implementation works. This avoids a race when groups could change after
+connect and more importantly avoids a potential dead-locke due to non-trivial nss
+modules. This is made possible by a new kernel feature (SO_PEERGROUPS), which the
+reference implementation could also make use of, if they so choose.
 
-# Names
+== Replies ==
 
-By default, any peer may own any name. However, a blacklist or a whitelist (but not both) may be provided to only allow some names to be owned. Such a list may also be provided once per gid and once per uid. The per-gid list takes precedence over the global list and the per-uid list takes precedence over both the global and the per-gid one.
+The specification allows unexpected replies to be allowed to be transmitted, or
+expected ones to be refused. We do not allow any policy on replies, rather we
+always transmit expected replies and never unexpected ones. This feature does
+not appear to be used, and supporting it would make our code more fragile and
+seems to open up for more problems than it solves.
 
-# Message transactions
+== Policy Language ==
 
-By default, any peer may send a method call or a directed signal to any other, and any peer may reply with a method reply or an error to any method call it has received, and any peer may broadcast any message to anyone subscribed to it and any peer may eavesdrop on any other.
+Appart from the above, we are fully compatible with the policy language of the
+reference implementation, though we express it differently in our API. The
+language we support is closer to how it is actually used, though not necessarily
+how it is typically expressed in configuration files. There are four types of,
+connect, own, send and receive. The former determines which peers are allowed
+to connect to the bus, and the latter three are attached to each peer at connect
+time and determines their behavior.
 
-However, restrictions can be made using transaction policies. A policy comes in four varieties: a send policy, a receive policy, and for each a eavesdropping and a non-eavesdropping variety. Transaction policies are similar to name policies in that there is one global one, one per gid, one per uid, and the most specific one applies to a given peer. A given message may be transmitted if it is both allowed to be sent and to be received according to the corresponding policies.
+=== Policy evaluation ===
 
-A policy consists of a set of rules mapping the tuple (name, path, interface, member, type) to either 'allow' or 'deny'. Each member of the tuple may be a wildcard. For a message to be allowed by a given policy, each tuple formed by combining each of the names of the sending/receiving peer as well as the wildcard name with the values from the message's metadata must map to 'allow'.
+Whenever deciding whether a certain action is permitted by a policy or not, several
+queries may be made to the policy database which should all be combined to form the
+final decision. The logic here is always the same, a judgement always indicates if
+something is 'allowed' or 'denied', and it indicates the priority of the judgement.
+If several judegements are made, the one with the higher priority takes precedent.
 
-More specific rules take precedence over less specific ones. A rule is considered more specific than another if they both match a given message, and the former has a literal and the latter a wildcard in the first member field of the tuple in which they differ.
+=== Connect ===
 
-# dbus-daemon compatibility
-
-The policy files of the dbus-daemon may be compiled into the policies accepted by the broker with the following caveats:
- - 'at_console=true' rules must be discarded,
- - it is never possible to have a policy to cause non-expected replies to be delivered.
+The connect policy is given by a wildcard judgement, and up to one judgement per
+uid and gid. Whenever a peer connects to the daemon a wildcaerd query is made and
+one query for the peers uid as well as one for each of its auxillary gids. As
+explained above, the judgement with the higher priority takes precedent.
