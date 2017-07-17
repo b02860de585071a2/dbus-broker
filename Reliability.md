@@ -3,8 +3,7 @@ DBus is meant to be a reliable transport, this poses several challenges, this pa
 ## Fatal errors
 
 All internal errors in the broker are considered fatal, all peers are forcibly disconnected
-and the broker is shut down. We do not try to work around issues due to say memory shortage or
-configuration errors.
+and the broker is shut down. We do not try to work around issues due to say system memory shortage (as opposed to our internal quotas being reached, see below) or configuration errors.
 
 ## Protocol violations
 
