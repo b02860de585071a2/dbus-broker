@@ -10,7 +10,7 @@ In order for clients to connect to the broker, the controller must establish a l
 
 In order to create a broker compatible with the reference implementation, the listening socket should be installed by the controller in the standard filesystem location, and the passed-in policy should be generated from the XML policy found in the default location in the filesystem (both these locations depend on whether there is a system or a user bus that is being implemented).
 
-Whilst the reference implementation only ever listens on one socket, dbus-broker has no such restriction. There can be any number of listening sockets, and they may all have different policies attached.
+There can be any number of listening sockets, and they may all have different policies attached.
 
 ## Names
 
