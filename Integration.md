@@ -10,6 +10,8 @@ In order for clients to connect to the broker, the controller must establish a l
 
 In order to create a broker compatible with the reference implementation, the listening socket should be installed by the controller in the standard filesystem location, and the passed-in policy should be generated from the XML policy found in the default location in the filesystem (both these locations depend on whether there is a system or a user bus that is being implemented).
 
+Whilst the reference implementation only ever listens on one socket, dbus-broker has no such restriction. There can be any number of listening sockets, and they may all have different policies attached.
+
 ## Names
 
 In order for names to be activatable, the controller must call a method on the private broker connection to enable each name for activation. It will also pass in which uid the resources of the name (which may otherwise be unbounded) should be accounted on. Ideally this uid should be the same as the one eventually owning the name (if this is known by the controller).
@@ -23,3 +25,7 @@ In general though, names may be made activateable (and removed again) at any poi
 When a peer requests activation (explicitly or implicitly) of an activatable name, a signal is sent to the controller over the private socket indicating the request. However, it is the sole responsibility of the controller to know how to handle such a request (the broker does not know anything about the implementers of names). Ideally, the controller is also the process responsible for spawning clients (it could for instance be PID1 for the system bus), but it could also simply forward the requests to (the equivalent of) PID1.
 
 Requests made by peers to the broker to update the activation environment, are simply forwarded to the controller, which is responsible for making sure any further peers are spawn with the correct environment variables set.
+
+## Isolation
+
+It is worth noting again that the only communication the broker does with the outside world (given a sufficiently recent kernel) is over D-Bus. Either over the controller connection, or (obviously) over the peer connections established by connecting to one of the listening sockets passed in over the controller connection. The broker never does any blocking calls, never accesses the filesystem, or in any other way affects or is affected by its environment. This both improves the predictability of the performance, and it avoids some pitfalls for dead-locks, which otherwise would be present.
