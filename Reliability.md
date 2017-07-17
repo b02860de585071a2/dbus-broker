@@ -21,7 +21,7 @@ disconnected without ever sending a reply. No other message type ever receives a
 
 ## Resource exhaustion 
 
-The amount of resources for message queuing is (limited)[Accounting], and in case the necessary resources
+The amount of resources for message queuing is [limited](Accounting), and in case the necessary resources
 for queuing a message is not available, this is dealt with as follows:
 
 ### Method calls
