@@ -8,4 +8,6 @@
 
 * [Policy](Policy)
 * [Reliability](Reliability)
+* [Accounting](Accounting)
+* [Performance](Performance)
 * [TODO](TODO)
