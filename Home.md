@@ -24,4 +24,4 @@ Similarly, the user bus can be provided by dbus-broker via:
 
 (The first command enables it just for the calling user, while the second command enables it for all local users.)
 
-After a reboot the changes take effect.
+After a reboot the changes take effect. For the time being SELinux must be disabled by passing selinux=0 on the kernel command-line at boot.
