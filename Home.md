@@ -2,7 +2,7 @@ The dbus-broker project is an implementation of a message bus as defined by the 
 
 While compatibility to existing D-Bus implementations is crucial, there are several situations where dbus-broker deviates from existing practices, and provides its own solutions. All these deviations are [documented](Deviations).
 
-It is possible to use dbus-broker as a drop-in replacement for the reference implementation, as described [below](Home#using-dbus-broker), but it is also possible to [integrate](Integration) the message broker directly as an isolated process without any side-effects or file-system access.
+It is possible to use dbus-broker as a drop-in replacement for the reference implementation, as described [below](#using-dbus-broker), but it is also possible to [integrate](Integration) the message broker directly as an isolated process without any side-effects or file-system access.
 
 # Using dbus-broker
 
