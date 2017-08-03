@@ -5,6 +5,8 @@ _Unexpected-replies_ and _Reply-filtering_ have no known users (nor use-cases), 
 
 * **at_console Policies**: D-Bus policies in the `at_console=true` context are ignored by dbus-broker. Moreover, the broker considers all peers `at_console=false`, hence only applies those rules. Inspecting whether a peer is considered `at_console` requires IPC at runtime. However, we strongly believe that an implementation of IPC should never perform recursive IPC at runtime to provide its service. Furthermore, `at_console` rules are deprecated by the reference implementation, and there are suitable replacements like PolKit available.
 
+* **Eavesdropping**: The concept of eavesdropping has been deprecated in favor of monitoring upstream, though the reference implementation still implements both. For the time being eavesdropping is not implemented in dbus-broker.
+
 * **Recursive FD Passing**: The linux kernel allows queuing a socket on itself. If a client passes a message with its own end of the Unix-Domain-Socket as payload, the message will keep the client alive, even if the original client exits and closes its FDs. As such, if the message is directed at itself, there will be no way of disconnecting that client.
 While dbus-daemon applies timeouts to pending messages (and thus disconnects some of those clients after 120s), dbus-broker does not cleanup such clients. Instead, dbus-broker allows such clients to "pin themselves" if they wish to, relying on its resource accounting to make sure this cannot be exploited.
 
