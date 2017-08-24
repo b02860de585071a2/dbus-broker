@@ -20,7 +20,7 @@ Similarly, the user bus can be provided by dbus-broker via:
 
     # systemctl --user enable dbus-broker.service
     ..or..
-    # systemctl --global --user enable dbus-broker.service
+    # systemctl --global enable dbus-broker.service
 
 (The first command enables it just for the calling user, while the second command enables it for all local users.)
 
