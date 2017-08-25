@@ -27,7 +27,7 @@ for queuing a message is not available, this is dealt with as follows:
 ### Method calls
 
 In case NO_REPLY_EXPECTED is specified the message is silently dropped, otherwise an error
-message is returned from the driver. If, in turn, the error from the driver cannot be delivered, this is handled, as described in the nelike any other error message, as 
+message is returned from the driver. If, in turn, the error from the driver cannot be delivered, this is handled like any other error message is.
 
 ### Method returns and errors
 
