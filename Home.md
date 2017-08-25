@@ -9,7 +9,7 @@ It is possible to use dbus-broker as a drop-in replacement for the reference imp
 * Fedora: [-git](https://copr.fedorainfracloud.org/coprs/g/bus1/dbus/package/dbus-broker-git/)
 * Fedora: [-stable](https://copr.fedorainfracloud.org/coprs/g/bus1/dbus/package/dbus-broker/)
 * Arch Linux: [-git](https://aur.archlinux.org/packages/dbus-broker-git)
-* Arch Linux: [-stable](https://aur.archlinux.org/packages/dbus-broker-git)
+* Arch Linux: [-stable](https://aur.archlinux.org/packages/dbus-broker)
 * NixOS: [-stable](https://github.com/NixOS/nixpkgs/tree/master/pkgs/os-specific/linux/dbus-broker)
 
 # Using dbus-broker
