@@ -4,11 +4,11 @@ In general, peers connected to the broker are run under a different UID from the
 
 To the extent possible, we wish to account resource usage directly on a UID, and not, for instance, in a hierarchy based on peers or similar. The reason for this is that each UID must be able to connect many peers, so if we limit resources per-peer, the limits would have to be artificially low in order to keep the total usage limits per-UID reasonable. Moreover, it makes no sense to try to protect peers owned by the same UID from each other.
 
-There are two ways resources can be consumde: a peer can directly consume its own resources, or a peer can cause another peer to consume its resources. These cases are related, but different. We start out by explaining the accounting in the first case, and later extend it to the second.
+There are two ways resources can be consumed: a peer can directly consume its own resources, or a peer can cause another peer to consume its resources. These cases are related, but different. We start out by explaining the accounting in the first case, and later extend it to the second.
 
 ## Types of Resources
 
-There are four different categories of resources that are accounted. Each of these have a fixed (but configurable) per-UID limit. It is a configuration error or programmatic error to exceed these quotas. And exceeding them may cause the peer to be disconnected, or an error to be returned, depending on the situation. For details see the page on [reliability](Reliability).
+There are four different categories of resources that are accounted. Each of these has a fixed (but configurable) per-UID limit. It is a configuration error or programmatic error to exceed these quotas. And exceeding them may cause the peer to be disconnected, or an error to be returned, depending on the situation. For details see the page on [reliability](Reliability).
 
 ### Memory
 
