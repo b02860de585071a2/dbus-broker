@@ -63,7 +63,7 @@ returned judgments are combined in the usual way.
 ### Send
 
 A send policy consists of one by-name policy for each of a set of well-known names, as well as a
-wildcard by-name policy. Each of the by-name policies assign judgments to message metadata, as
+wildcard by-name policy. Each of the by-name policies assigns judgments to message metadata, as
 is done by the regular dbus policies (matching on type, object path, interface and member).
 
 When a message is sent, queries are made to the sender's send policies. The by-name policies
