@@ -11,6 +11,8 @@ It is possible to use dbus-broker as a drop-in replacement for the reference imp
 * Arch Linux: [-git](https://aur.archlinux.org/packages/dbus-broker-git)
 * Arch Linux: [-stable](https://aur.archlinux.org/packages/dbus-broker)
 * NixOS: [-stable](https://github.com/NixOS/nixpkgs/tree/master/pkgs/os-specific/linux/dbus-broker)
+* Gentoo Linux: [-git](https://packages.gentoo.org/packages/sys-apps/dbus-broker)
+* Gentoo Linux: [-stable](https://packages.gentoo.org/packages/sys-apps/dbus-broker)
 
 # Using dbus-broker
 
