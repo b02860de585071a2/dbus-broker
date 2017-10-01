@@ -3,3 +3,4 @@
 * Add `c_list_for_each_continue()` and use with match-iterators
 * Make `c_rbtree_remove()` not require the root-pointer
 * Test-infrastructure should check `-O3`
+* Implement destination-matches for monitors (see also https://bugs.freedesktop.org/attachment.cgi?id=119441)
