@@ -1,10 +1,4 @@
-Whilst dbus-broker is still a young project, and no serious performance optimizations have been performed, this page outlines some of the challenges and design-decisions that are relevant to any performance analysis.
-
-## Pipelining
-
-Each time we call into the kernel, we attempt to read or write as much data as possible (up to some fixed limits), in particular, we do not limit ourselves to reading/writing one message at a time.
-
-A nice example of why this may be beneficial is that a client could connect, push its entire SASL exchange, the initial `Hello()` message, and perhaps a call to `RequestName()`, the broker would read all of this data from the kernel with one call, process it all in the same main-loop iteration, and write out all the responses with one more call to the kernel. Assuming it is the length of the pending dispatch-queue that is the limiting factor on a busy bus, being able to do connect+request+reply in one main-loop iteration (rather than six, or even twelve) should improve latency accordingly, in the worst-case.
+Whilst dbus-broker is still a young project, and no serious performance optimizations have been performed, this page outlines some of the challenges and design-decisions that are relevant to any performance or scalability analysis.
 
 ## Lookup maps
 
@@ -25,3 +19,9 @@ A future optimization of matches is to probabilistically reduce the cost of comp
 Due to the nature of the D-Bus policy, policy application to each transferred message is, like matches, too intrinsically linear. Like matches we index policies by the `send_destination` (resp., `receve_sender`) fields. This does not change the algorithmic performance, but it greatly reduces the number of false positives we have to compare on each message transaction.
 
 In the future, we hope to introduce a new policy language, which is both much more intuitive to write/read and also can be implemented with much more reasonable performance cost.
+
+## Pipelining
+
+Each time we call into the kernel, we attempt to read or write as much data as possible (up to some fixed limits), in particular, we do not limit ourselves to reading/writing one message at a time.
+
+A nice example of why this may be beneficial is that a client could connect, push its entire SASL exchange, the initial `Hello()` message, and perhaps a call to `RequestName()`, the broker would read all of this data from the kernel with one call, process it all in the same main-loop iteration, and write out all the responses with one more call to the kernel. Assuming it is the length of the pending dispatch-queue that is the limiting factor on a busy bus, being able to do connect+request+reply in one main-loop iteration (rather than six, or even twelve) should improve latency accordingly, in the worst-case.
