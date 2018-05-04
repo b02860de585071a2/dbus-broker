@@ -6,3 +6,4 @@
 * Make NSS-lookups *opt-in*, so we will not use them by default (only the passwd-cache).
 * update driver to new dbus-spec extensions
 * run as uid specified in xml-config
+* bus_selinux_deinit_global() segfaults if called before bus_selinux_init_global()
