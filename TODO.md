@@ -5,3 +5,4 @@
 * Rewrite MATCH API to be more convenient to use
 * update driver to new dbus-spec extensions
 * fix `is_solicited` check to match sender
+* support inotify on XML configuration
