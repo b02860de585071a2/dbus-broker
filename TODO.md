@@ -5,5 +5,4 @@
 * Rewrite MATCH API to be more convenient to use
 * update driver to new dbus-spec extensions
 * fix `is_solicited` check to match sender
-* change EDQUOT of unsolicited messages to be a silent discard
 * support inotify on XML configuration
