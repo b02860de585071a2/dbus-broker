@@ -3,3 +3,4 @@
 * update driver to new dbus-spec extensions
 * support inotify on XML configuration
 * document journal KEYS that we use
+* strip unknown header fields
