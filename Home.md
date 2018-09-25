@@ -13,6 +13,8 @@ It is possible to use dbus-broker as a drop-in replacement for the reference imp
 * NixOS: [-stable](https://github.com/NixOS/nixpkgs/tree/master/pkgs/os-specific/linux/dbus-broker)
 * Gentoo Linux: [-git](https://packages.gentoo.org/packages/sys-apps/dbus-broker)
 * Gentoo Linux: [-stable](https://packages.gentoo.org/packages/sys-apps/dbus-broker)
+* OpenEmbedded: [-git](http://cgit.openembedded.org/meta-openembedded/tree/meta-oe/recipes-core/dbus)
+* OpenSUSE: [-git](https://software.opensuse.org/package/dbus-broker)
 
 # Using dbus-broker
 
