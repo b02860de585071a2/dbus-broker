@@ -3,3 +3,5 @@
 * update driver to new dbus-spec extensions
 * document journal KEYS that we use
 * strip unknown header fields
+* log quota messages once per peer, not once per user (see 31ba421ef969)
+* log startup/shutdown summary in launcher and broker
