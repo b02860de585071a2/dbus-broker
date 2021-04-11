@@ -6,16 +6,16 @@ It is possible to use dbus-broker as a drop-in replacement for the reference imp
 
 # Available Packages
 
-* Fedora: [-stable](https://copr.fedorainfracloud.org/coprs/g/bus1/dbus/package/dbus-broker/)
-* OpenSUSE: [-git](https://software.opensuse.org/package/dbus-broker)
 * Arch Linux: [-git](https://aur.archlinux.org/packages/dbus-broker-git)
 * Arch Linux: [-stable](https://www.archlinux.org/packages/extra/x86_64/dbus-broker/)
 * Debian: [-sid](https://packages.debian.org/sid/dbus-broker)
 * Debian: [-bullseye](https://packages.debian.org/bullseye/dbus-broker)
+* Fedora: [-stable](https://copr.fedorainfracloud.org/coprs/g/bus1/dbus/package/dbus-broker/)
 * Gentoo Linux: [-git](https://packages.gentoo.org/packages/sys-apps/dbus-broker)
 * Gentoo Linux: [-stable](https://packages.gentoo.org/packages/sys-apps/dbus-broker)
 * NixOS: [-stable](https://github.com/NixOS/nixpkgs/tree/master/pkgs/os-specific/linux/dbus-broker)
 * OpenEmbedded: [-git](http://cgit.openembedded.org/meta-openembedded/tree/meta-oe/recipes-core/dbus)
+* OpenSUSE: [-git](https://software.opensuse.org/package/dbus-broker)
 * Ubuntu: [-hirsute](https://packages.ubuntu.com/hirsute/dbus-broker)
 
 # Using dbus-broker
