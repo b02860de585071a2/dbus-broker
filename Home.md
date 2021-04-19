@@ -28,14 +28,14 @@ To enable dbus-broker as system bus, run:
 
     # systemctl enable dbus-broker.service
 
-This will create a link `/etc/systemd/system/dbus.service` poiting to the dbus-broker service file, as such replacing the service file provided by the reference implementation.
+This will create a link `/etc/systemd/system/dbus.service` pointing to the dbus-broker service file, as such replacing the service file provided by the reference implementation.
 
 Similarly, the user bus can be provided by dbus-broker via:
 
-    # systemctl --user enable dbus-broker.service
+    $ systemctl --user enable dbus-broker.service
     ..or..
     # systemctl --global enable dbus-broker.service
 
-(The first command enables it just for the calling user, while the second command enables it for all local users.)
+The first command enables it just for the calling user, while the second command enables it for all local users.
 
 After a reboot the changes take effect.
