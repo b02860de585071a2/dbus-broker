@@ -32,7 +32,7 @@ This will create a link `/etc/systemd/system/dbus.service` pointing to the dbus-
 
 Similarly, the user bus can be provided by dbus-broker via:
 
-    $ systemctl --user enable dbus-broker.service
+    # systemctl --user enable dbus-broker.service
     ..or..
     # systemctl --global enable dbus-broker.service
 
