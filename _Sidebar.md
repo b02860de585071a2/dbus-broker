@@ -4,7 +4,7 @@
 * [Deviations](Deviations)
 * [Integration](Integration)
 
-**[Internals](Development)**
+**Internals**
 
 * [Policy](Policy)
 * [Reliability](Reliability)
