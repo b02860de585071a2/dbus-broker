@@ -1,6 +1,7 @@
 **[D-Bus Broker](Home)**
 
 * [Usage](Home#using-dbus-broker)
+* [Releases](Home#releases)
 * [Deviations](Deviations)
 * [Integration](Integration)
 
