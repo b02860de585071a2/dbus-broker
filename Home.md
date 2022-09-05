@@ -39,3 +39,9 @@ Similarly, the user bus can be provided by dbus-broker via:
 The first command enables it just for the calling user, while the second command enables it for all local users.
 
 After a reboot the changes take effect.
+
+# Releases
+
+All [dbus-broker releases](https://github.com/bus1/dbus-broker/releases) come with a signed tar archive with all subproject-dependencies included. Distributors are free to use separately packaged subproject-dependencies and discard the bundled versions. Additionally, a checksum and signature of the tarball is provided.
+
+The currently uses GPG-key for release signatures can be found on [@GitHub](https://github.com/dvdhrm.gpg).
